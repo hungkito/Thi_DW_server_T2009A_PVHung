@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ServerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/admin', function () {
     return view('welcome');
 });
+
+Route::get('/server', function () {
+    return view('server');
+});
+Route::get('/server/save', [ServerController::class, 'save']);
